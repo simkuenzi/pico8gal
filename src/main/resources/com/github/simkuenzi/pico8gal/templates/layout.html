@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html th:fragment="layout(title, content)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:include="${title}">Page Title</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css" type="text/css">
+</head>
+<body>
+
+<div class="header">
+    <span class="header-title">
+        Games
+    </span>
+</div>
+
+<div class="body">
+<div th:replace="${content}">
+    Page content comes here...
+</div>
+</div>
+
+<div class="footer">
+    <span class="version" th:text="'Version ' + ${version}">
+        Version x.x
+    </span>
+</div>
+
+</body>
+</html>
